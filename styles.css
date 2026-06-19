@@ -74,3 +74,21 @@ footer{border-top:1px solid var(--line);padding:28px 0}.footer-inner{display:fle
     grid-template-columns: 1fr !important;
   }
 }
+.service-card {
+  background: #ffffff;
+  border: 1px solid #ded5c8;
+  border-radius: 22px;
+  padding: 26px;
+  min-height: 190px;
+}
+
+.service-card h3 {
+  margin: 0 0 12px;
+  font-size: 20px;
+}
+
+.service-card p {
+  margin: 0;
+  color: #6f675d;
+  line-height: 1.7;
+}
