@@ -16,27 +16,33 @@ h1{margin:30px 0}
 .lightbox:target{display:flex}
 </style>
 </head>
+
 <body>
 <div class="container">
   <a class="back" href="index.html">← 메인으로</a>
   <h1>와펜작업 및 부착</h1>
 
-  <div class="gallery">
-    <a href="#img1"><img src="images/patch/01.jpg" alt="와펜 작업 1"></a>
-    <a href="#img2"><img src="images/patch/02.jpg" alt="와펜 작업 2"></a>
-    <a href="#img3"><img src="images/patch/03.jpg" alt="와펜 작업 3"></a>
-    <a href="#img4"><img src="images/patch/04.jpg" alt="와펜 작업 4"></a>
-    <a href="#img5"><img src="images/patch/05.jpg" alt="와펜 작업 5"></a>
-    <a href="#img6"><img src="images/patch/06.jpg" alt="와펜 작업 6"></a>
-  </div>
+  <div class="gallery" id="gallery"></div>
 </div>
 
-<a href="#" class="lightbox" id="img1"><img src="images/patch/01.jpg"></a>
-<a href="#" class="lightbox" id="img2"><img src="images/patch/02.jpg"></a>
-<a href="#" class="lightbox" id="img3"><img src="images/patch/03.jpg"></a>
-<a href="#" class="lightbox" id="img4"><img src="images/patch/04.jpg"></a>
-<a href="#" class="lightbox" id="img5"><img src="images/patch/05.jpg"></a>
-<a href="#" class="lightbox" id="img6"><img src="images/patch/06.jpg"></a>
+<script>
+  const folder = "이미지/패치/";
+  const totalImages = 8;
 
+  const gallery = document.getElementById("gallery");
+
+  for (let i = 1; i <= totalImages; i++) {
+    const number = String(i).padStart(2, "0");
+    gallery.innerHTML += `
+      <a href="#img${i}">
+        <img src="${folder}${number}.jpg" alt="와펜 작업 ${i}">
+      </a>
+
+      <a href="#" class="lightbox" id="img${i}">
+        <img src="${folder}${number}.jpg" alt="와펜 작업 ${i}">
+      </a>
+    `;
+  }
+</script>
 </body>
 </html>
